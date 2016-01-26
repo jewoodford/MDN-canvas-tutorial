@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Gamedev Canvas Workshop</title>
+	<style>
+		*{padding: 0; margin:0;}
+		canvas {background: #eee; display: block; margin: 0 auto;}
+	</style>
+</head>
+<body>
+
+	<canvas id="myCanvas" width="480" height="320"></canvas>
+
+	<script>
+		//code here
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+
+		ctx.beginPath(); //starts creation of object
+		ctx.rect(20,40,50,50); //(x-coordinate of top left corner, y-coordinate of same, width, height)
+		ctx.fillStyle = "#FF0000"; //determins color of object
+		ctx.fill(); // fills the object with the fillStyle's color
+		ctx.closePath(); //ends creation of object
+
+		ctx.beginPath();
+		ctx.arc(240, 160, 20, 0, Math.PI*2, false); //(x-coordinate of ceter of arc, y of same, arc radius, start and end angle,(optional) determines if it draws clockwise(false) or counter(true))
+		ctx.fillStyle = "green";
+		ctx.fill();
+		ctx.closePath();
+
+		ctx.beginPath();
+		ctx.rect(160, 10, 100, 40);
+		ctx.strokeStyle = "rgba(0, 0, 255, 0.5)"; //determines color of object last one is transparency 0-1 value
+		ctx.stroke(); // thi makes it do theoutline as opposed to filling the entire object
+		ctx.closePath();
+	</script>
+
+</body>
+</html>
